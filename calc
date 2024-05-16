@@ -1,0 +1,57 @@
+class Calculator:
+    def add(self, num1, num2):
+        return num1 + num2
+    
+    def subtract(self, num1, num2):
+        return num1 - num2
+    
+    def multiply(self, num1, num2):
+        return num1 * num2
+    
+    def divide(self, num1, num2):
+        return num1 / num2
+    
+    
+#function to get user input for numbers and operation
+def get_user_input():
+    num1 = float(input("Enter the first number: "))
+    num2 = float(input("Enter the second number: "))
+    operation = input("Enter the operation that you would like to perform (+, -,* /): ")
+    return num1, num2, operation
+
+#function to perform the selected operation
+
+def perform_operation(calc, num1, num2, operation):
+    if operation == "+":
+        
+        return calc.add(num1, num2)
+    elif operation == "-":
+        return calc.subtract(num1, num2)
+    
+    elif operation == "*":
+        return calc.multiply(num1, num2)
+    
+    elif operation == "/":
+        return calc.divide(num1, num2)
+    
+    else:
+        return "Invalid: That operation is not supported."
+
+
+#main function
+
+def main():
+    # create an instance of the calculator class
+    calc = Calculator()
+    
+    # Get user input
+    num1, num2, operation = get_user_input()
+    
+    #perform the operation
+    result = perform_operation(calc, num1, num2, operation)
+    
+    #display the result
+    print("Result:", result)
+    
+if __name__ == "__main__":
+    main()
